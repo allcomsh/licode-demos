@@ -17,18 +17,20 @@ exports.auth = function(req, res, next){
 	} else {
 		res.redirect('/admin/login');
 	}
-  
+
 };
 
 exports.admin = function(req, res){
-	
+
+    console.log("admin",req.session.id+":"+req.session.key);
 	rooms.fetch({id: req.session.id, key: req.session.key}, function(){
 
 		console.log(' rooms: ', rooms.roomList);
 		res.render('management', {rooms: rooms.roomList, title: 'Admin Panel', host: host});
 
-	}, function() {
-		req.session = null;
+	}, function(err) {
+        console.log("Error:"+err)
+        req.session = null;
 		state = 2;
 		res.redirect('/admin/login');
 	});
@@ -57,7 +59,7 @@ exports.login = function(req, res) {
 		}
 		res.render('login', {title: 'Admin Panel', msg: msg});
 	}
-	
+
 };
 
 exports.logout = function(req, res) {

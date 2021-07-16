@@ -71,8 +71,8 @@ http.createServer(app).listen(app.get('port'), function(){
 if (config.https) {
 
     var options = {
-        key: fs.readFileSync('cert/key.pem').toString(),
-        cert: fs.readFileSync('cert/cert.pem').toString()
+        key: fs.readFileSync('cert/callt.net.key').toString(),
+        cert: fs.readFileSync('cert/fullchain.cer').toString()
     };
 
     if (config.ca_certs) {

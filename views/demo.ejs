@@ -1,8 +1,8 @@
-<% include partials/demo/top %>
+<%- include("./partials/demo/top") %>
 
 <% if (!plain) { %>
 
-<% include partials/demo/navBar %>
+<%- include("./partials/demo/navBar") %>
 
 <%}%>
 
@@ -42,7 +42,7 @@
           <div id="users_list_container">
             <div id="users_list"></div>
           </div>
-          
+
         </div>
       </div>
 
@@ -60,7 +60,7 @@
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-default  close_button">Cancel</button>
-                <button id="connect_button" type="sumbit" class="btn btn-primary">Connect</button> 
+                <button id="connect_button" type="sumbit" class="btn btn-primary">Connect</button>
               </div>
             </form>
           </div>
@@ -80,7 +80,7 @@
 
 <% if (!plain) { %>
 
-<% include partials/demo/footer %>
+<%- include("./partials/demo/footer") %>
 
 <%}%>
-<% include partials/demo/bottom %>
+<%- include("./partials/demo/bottom") %>
